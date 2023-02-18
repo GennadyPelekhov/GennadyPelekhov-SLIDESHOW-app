@@ -36,7 +36,8 @@
                                 <span id="about-page-link" class="nav-link cursor" aria-current="page">About</span>
                             </li>
                             <li class="nav-item">
-                                <span class="nav-link cursor" aria-current="page">Add Pic</span>
+                                <span id="create-page-link" class="nav-link cursor" aria-current="page">Create
+                                    Pic</span>
                             </li>
 
                         </ul>
@@ -46,10 +47,10 @@
                     <div>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <span class="nav-link cursor" aria-current="page">Signup</span>
+                                <span id="signup-page-link" class="nav-link cursor" aria-current="page">Signup</span>
                             </li>
                             <li class="nav-item">
-                                <span class="nav-link cursor" aria-current="page">Login</span>
+                                <span id="login-page-link" class="nav-link cursor" aria-current="page">Login</span>
                             </li>
 
                         </ul>
@@ -60,12 +61,13 @@
         </nav>
     </header>
     <main>
+        <!-- home page -->
         <div id="home-page" class="d-block">
             <div class="container">
                 <div class="center">
                     <div class="col-12 col-md-10 col-xl-8">
                         <h1 class="display-4">HOME PAGE</h1>
-                        <h2 class="fs-5">Here you can look at your pictures</h2>
+                        <h2 class="fs-5">Here you can look at your pictures...</h2>
                         <hr>
                     </div>
                 </div>
@@ -73,16 +75,76 @@
             </div>
         </div>
 
+        <!-- about page -->
         <div id="about-page" class="d-none">
             <div class="container">
                 <div class="center">
                     <div class="col-12 col-md-10 col-xl-8">
                         <h1 class="display-4">ABOUT PAGE</h1>
-                        <h2 class="fs-5">Here you can look at your pictures</h2>
+                        <h2 class="fs-5">Here you can look at your pictures...</h2>
                         <hr>
                     </div>
                 </div>
                 <p>about page content</p>
+            </div>
+        </div>
+
+        <!-- create pic page -->
+        <div id="create-picture-page" class="d-none">
+            <div class="container">
+                <div class="center">
+                    <div class="col-12 col-md-10 col-xl-8">
+                        <h1 class="display-4">CREATE NEW PICTURE PAGE</h1>
+                        <h2 class="fs-5">Here you can look at your pictures...</h2>
+                        <hr>
+                    </div>
+                </div>
+                <p>create picture page content</p>
+            </div>
+        </div>
+
+        <!-- signup page -->
+        <div id="signup-page" class="d-none">
+            <div class="container">
+                <div class="center">
+                    <div class="col-12 col-md-10 col-xl-8">
+                        <h1 class="display-4">SIGNUP PAGE</h1>
+                        <h2 class="fs-5">Here you can look at your pictures...</h2>
+                        <hr />
+                    </div>
+                </div>
+
+                <p>signup page content</p>
+            </div>
+        </div>
+
+        <!-- login page -->
+        <div id="login-page" class="d-none">
+            <div class="container">
+                <div class="center">
+                    <div class="col-12 col-md-10 col-xl-8">
+                        <h1 class="display-4">LOGIN PAGE</h1>
+                        <h2 class="fs-5">Here you can look at your pictures...</h2>
+                        <hr>
+                    </div>
+                </div>
+                <p>login page content</p>
+            </div>
+        </div>
+
+        <!-- error 404 page -->
+        <div id="error-page" class="d-none">
+            <div class="container">
+                <div class="center">
+                    <div class="col-12 col-md-10 col-xl-8">
+                        <h1 class="display-4">ERROR 404 PAGE</h1>
+                        <h2 class="fs-5">oops....something went wrong </h2>
+                        <hr>
+                    </div>
+                </div>
+                <p id="return-to-home-page-link" class="cursor">
+                    Click here to return to the home page...
+                </p>
             </div>
         </div>
     </main>
