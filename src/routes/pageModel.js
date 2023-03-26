@@ -1,10 +1,10 @@
 const PAGES = {
   HOME: "home-page",
   ABOUT: "about-page",
-  CREATE: "create-picture-page",
+  CREATE_PIC: "create-pic-page",
   SIGNUP: "signup-page",
   LOGIN: "login-page",
-  ERROR: "error-page",
+  ERROR404: "error-404-page",
 };
 
 export default PAGES;

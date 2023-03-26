@@ -16,12 +16,12 @@ class User {
   #isBusiness;
 
   constructor(user, users = []) {
-    const { address, phone, name, email, password, isAdmin, isBusiness } = user;
+    const { address, phone, name, password, email, isAdmin, isBusiness } = user;
 
-    this.#address = this.checkAddress(address);
-    this.#phone = this.checkPhone(phone);
     this.#id = generateUniqId(users, 1_000_000, 9_999_999);
     this.#name = this.setName(name);
+    this.#address = this.checkAddress(address);
+    this.#phone = this.checkPhone(phone);
     this.#email = this.checkUniqEmail(email, users);
     this.#password = this.checkPassword(password);
     this.#createdAt = new Date();
@@ -52,7 +52,7 @@ class User {
 
   checkPassword(password) {
     const regex = PASSWORD_REGEX;
-    const isExist = regex.test(password);
+    const isExist = password.match(regex);
     if (!isExist)
       throw new Error(
         "The password must contain at least one uppercase letter in English. One lowercase letter in English. Four numbers and one of the following special characters !@#$%^&*-"
@@ -79,7 +79,9 @@ class User {
   }
 
   checkAddress(address) {
-    const { state, country, city, street, houseNumber, zip } = address;
+    let { state, country, city, street, houseNumber, zip } = address;
+    houseNumber = Number(houseNumber);
+    zip = Number(zip);
     if (
       country.length < 2 ||
       city.length < 2 ||
@@ -93,18 +95,39 @@ class User {
     return { state: state || "", country, city, street, houseNumber, zip };
   }
 
-  update(user, users) {
+  // update(user, users) {
+  //   if (typeof user !== "object") throw new Error("Please enter a valid user!");
+  //   if (user._id !== this.#id)
+  //     throw new Error("Only the registered user can make changes!");
+  //   const { address, phone, name, email, isBusiness } = user;
+  //   this.#name = this.setName(name);
+  //   this.#address = this.checkAddress(address);
+  //   this.#phone = this.checkPhone(phone);
+  //   this.#email =
+  //     email === this.#email ? this.#email : this.checkUniqEmail(email, users);
+  //   this.#isBusiness = isBusiness ? isBusiness : this.#isBusiness;
+  //   return this;
+  // }
+
+  static findOneAndUpdate(user, users) {
     if (typeof user !== "object") throw new Error("Please enter a valid user!");
-    if (user._id !== this.#id)
-      throw new Error("Only the registered user can make changes!");
+    if (Array.isArray(users) !== true || !users.length)
+      throw new Error("Please enter array of users");
+
+    const userInArray = users.find((item) => item._id === user._id);
+    if (!userInArray) throw new Error("this user in not in the database!");
+
     const { address, phone, name, email, isBusiness } = user;
-    this.#name = this.setName(name);
-    this.#address = this.checkAddress(address);
-    this.#phone = this.checkPhone(phone);
-    this.#email =
-      email === this.#email ? this.#email : this.checkUniqEmail(email, users);
-    this.#isBusiness = isBusiness ? isBusiness : this.#isBusiness;
-    return this;
+    userInArray.#name = userInArray.setName(name);
+    userInArray.#address = userInArray.checkAddress(address);
+    userInArray.#phone = userInArray.checkPhone(phone);
+    userInArray.#email =
+      email === userInArray.#email
+        ? userInArray.#email
+        : userInArray.checkUniqEmail(email, users);
+    userInArray.#isBusiness = isBusiness ? isBusiness : userInArray.#isBusiness;
+
+    return users;
   }
 
   changePassword() {}
@@ -134,53 +157,58 @@ class User {
   get createdAt() {
     return this.#createdAt;
   }
+  get isBusiness() {
+    return this.#isBusiness;
+  }
 }
 
 export default User;
 
-const test = {
-  email: "test@gmail.com",
-  password: "Aa12345!",
-  address: {
-    state: "usa",
-    country: "new-york",
-    city: "new-york",
-    street: "brodway",
-    houseNumber: 5,
-    zip: 123456,
-  },
-  phone: "050-0000000",
-  name: {
-    first: "david",
-    last: "yakin",
-  },
-};
+// const test = {
+//   email: "test@gmail.com",
+//   password: "Aa12345!",
+//   address: {
+//     state: "usa",
+//     country: "new-york",
+//     city: "new-york",
+//     street: "brodway",
+//     houseNumber: 5,
+//     zip: 123456,
+//   },
+//   phone: "050-0000000",
+//   name: {
+//     first: "david",
+//     last: "yakin",
+//   },
+// };
 
-const array = [test];
+// const array = [test];
 
-try {
-  const user = new User(test);
-  // user.changeBizStatus(user);
+// try {
+//   const user = new User(test);
+//   const array = [user];
 
-  user.update(
-    {
-      _id: user._id,
-      name: { first: "shula", last: "zaken" },
-      phone: "054-9999999",
-      email: "walla@gmail.com",
-      address: {
-        state: "",
-        country: "Israel",
-        city: "Tel-aviv",
-        street: "Shoham",
-        houseNumber: 5,
-        zip: 123456,
-      },
-    },
-    array
-  );
-  // user.changeBizStatus({ isAdmin: true });
-  console.log(user);
-} catch (error) {
-  console.log(error.message);
-}
+//   user.changeBizStatus(user);
+
+//   user.update(
+//     {
+//       _id: user._id,
+//       name: { first: "shula", last: "zaken" },
+//       phone: "054-9999999",
+//       email: "walla@gmail.com",
+//       address: {
+//         state: "",
+//         country: "Israel",
+//         city: "Tel-aviv",
+//         street: "Shoham",
+//         houseNumber: 5,
+//         zip: 123456,
+//       },
+//     },
+//     array
+//   );
+//   user.changeBizStatus({ isAdmin: true });
+//   console.log(array);
+// } catch (error) {
+//   console.log(error.message);
+// }

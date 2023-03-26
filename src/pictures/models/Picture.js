@@ -14,7 +14,8 @@ class Picture {
   constructor(picture, pictures = []) {
     const { url, alt, credits, price, category, user_id } = picture;
     if (!url || !alt || !credits || !price || !user_id)
-      throw new Error("Bad Request");
+      throw new Error("Bad Request!");
+
     this.#id = generateUniqId(pictures, 1_000_000, 9_999_999);
     this.url = url;
     this.alt = alt;
@@ -32,6 +33,7 @@ class Picture {
   get createdAt() {
     return this.#createdAt;
   }
+
   get price() {
     return this.#price;
   }
@@ -39,27 +41,7 @@ class Picture {
   get user_id() {
     return this.#user_id;
   }
-  //   set price({ newPrice, user }) {
-  //    if(user._id !== this.user_id) throw new Error ("Only user that made the card can change the price!")
-  //     this.#price = newPrice;
-  //   }
 }
 
-// try {
-//   const pic = new Picture({
-//     url: "ff",
-//     alt: "dd",
-//     credits: "ddd",
-//     price: 5_000,
-//     user_id: "ffff",
-//     category: "school",
-//   });
-//   console.log(pic);
-// } catch (error) {
-//   error.status = 400;
-//   console.log(error);
-
-//   if (error.status >= 400) console.log("error bla bla");
-// }
 
 export default Picture;
