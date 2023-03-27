@@ -72,7 +72,6 @@ export const signup = () => {
     first: "",
     last: "",
     country: "",
-    state: "",
     city: "",
     street: "",
     house: "",
@@ -87,7 +86,6 @@ export const signup = () => {
     first: "string",
     last: "string",
     country: "string",
-    state: "string",
     city: "string",
     street: "string",
     house: "number",
@@ -110,7 +108,7 @@ export const signup = () => {
         email: data.email,
         password: data.password,
         address: {
-          state: data.state,
+          state: SIGNUP_STATE_FIELD.value || "",
           country: data.country,
           city: data.city,
           street: data.street,
@@ -190,15 +188,15 @@ export const signup = () => {
       signup.handleDisableSubmitBtn
     )
   );
-  SIGNUP_STATE_FIELD.addEventListener("input", (event) =>
-    onInputChange(
-      event,
-      SIGNUP_STATE_ERROR,
-      SIGNUP_SUBMIT_BTN,
-      signup.handleInputChange,
-      signup.handleDisableSubmitBtn
-    )
-  );
+  // SIGNUP_STATE_FIELD.addEventListener("input", (event) =>
+  //   onInputChange(
+  //     event,
+  //     SIGNUP_STATE_ERROR,
+  //     SIGNUP_SUBMIT_BTN,
+  //     signup.handleInputChange,
+  //     signup.handleDisableSubmitBtn
+  //   )
+  // );
   SIGNUP_CITY_FIELD.addEventListener("input", (event) =>
     onInputChange(
       event,
