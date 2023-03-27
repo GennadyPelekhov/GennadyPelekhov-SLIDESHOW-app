@@ -6,6 +6,7 @@ import {
   LOGIN_PAGE_LINK,
   RETURN_TO_HOME_PAGE_LINK,
   SIGNUP_PAGE_LINK,
+  GO_TO_ABOUT_PAGE_LINK,
 } from "../services/domService.js";
 import { onChangePage } from "./router.js";
 import { createPicture } from "../pictures/services/pictureService.js";
@@ -30,4 +31,7 @@ LOGIN_PAGE_LINK.addEventListener("click", () => {
 });
 RETURN_TO_HOME_PAGE_LINK.addEventListener("click", () =>
   onChangePage(PAGES.HOME)
+);
+GO_TO_ABOUT_PAGE_LINK.addEventListener("click", () =>
+  onChangePage(PAGES.ABOUT)
 );

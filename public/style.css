@@ -15,7 +15,8 @@
 }
 
 main {
-  min-height: 87dvh;
+  min-height: 88dvh;
+  background-color: antiquewhite;
 }
 
 .slide-show-img {

@@ -19,6 +19,10 @@ export const RETURN_TO_HOME_PAGE_LINK = document.getElementById(
   "return-to-home-page-link"
 );
 
+export const GO_TO_ABOUT_PAGE_LINK = document.getElementById(
+  "go-to-about-page-link"
+);
+
 export const LOGGED_USER_ADD_PIC = document.getElementById(
   "logged-user-add-pic"
 );

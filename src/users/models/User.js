@@ -95,20 +95,6 @@ class User {
     return { state: state || "", country, city, street, houseNumber, zip };
   }
 
-  // update(user, users) {
-  //   if (typeof user !== "object") throw new Error("Please enter a valid user!");
-  //   if (user._id !== this.#id)
-  //     throw new Error("Only the registered user can make changes!");
-  //   const { address, phone, name, email, isBusiness } = user;
-  //   this.#name = this.setName(name);
-  //   this.#address = this.checkAddress(address);
-  //   this.#phone = this.checkPhone(phone);
-  //   this.#email =
-  //     email === this.#email ? this.#email : this.checkUniqEmail(email, users);
-  //   this.#isBusiness = isBusiness ? isBusiness : this.#isBusiness;
-  //   return this;
-  // }
-
   static findOneAndUpdate(user, users) {
     if (typeof user !== "object") throw new Error("Please enter a valid user!");
     if (Array.isArray(users) !== true || !users.length)
@@ -163,52 +149,3 @@ class User {
 }
 
 export default User;
-
-// const test = {
-//   email: "test@gmail.com",
-//   password: "Aa12345!",
-//   address: {
-//     state: "usa",
-//     country: "new-york",
-//     city: "new-york",
-//     street: "brodway",
-//     houseNumber: 5,
-//     zip: 123456,
-//   },
-//   phone: "050-0000000",
-//   name: {
-//     first: "david",
-//     last: "yakin",
-//   },
-// };
-
-// const array = [test];
-
-// try {
-//   const user = new User(test);
-//   const array = [user];
-
-//   user.changeBizStatus(user);
-
-//   user.update(
-//     {
-//       _id: user._id,
-//       name: { first: "shula", last: "zaken" },
-//       phone: "054-9999999",
-//       email: "walla@gmail.com",
-//       address: {
-//         state: "",
-//         country: "Israel",
-//         city: "Tel-aviv",
-//         street: "Shoham",
-//         houseNumber: 5,
-//         zip: 123456,
-//       },
-//     },
-//     array
-//   );
-//   user.changeBizStatus({ isAdmin: true });
-//   console.log(array);
-// } catch (error) {
-//   console.log(error.message);
-// }

@@ -67,8 +67,15 @@
                 <!-- home page titles -->
                 <div class="center">
                     <div class="col-12 col-md-10 col-xl-8">
-                        <h1 class="display-4 text-center">HOME PAGE</h1>
-                        <h2 class="fs-5">Here you can look at your pictures...</h2>
+                        <h1 class="display-4 text-center">Welcome to SlideShow APP</h1>
+                        <h2 class="fs-5 text-center text-capitalize">Now you can share your pictures with others in the
+                            world!
+                        </h2>
+                        <hr />
+                        <p><span class="fw-bold">Only registred users can add pictures.</span> Read <span
+                                id="go-to-about-page-link"
+                                class="cursor text-decoration-underline text-primary">Here</span>
+                            for more information </p>
                         <hr />
                     </div>
                 </div>
@@ -76,7 +83,10 @@
                 <!-- the slideshow -->
                 <div id="slider-container">
                     <div class="center">
+
                         <div class="col-12 col-md-10 col-xl-8">
+                            <h2 class="fs-5 text-center m-3">Here's an example of some pictures...
+                            </h2>
                             <figure>
                                 <img id="slider-image" src="" alt="..." class="slide-show-img bg-dark p-2" />
                                 <figcaption>
@@ -107,13 +117,86 @@
             <div class="container">
                 <div class="center">
                     <div class="col-12 col-md-10 col-xl-8">
-                        <h1 class="display-4">ABOUT PAGE</h1>
-                        <h2 class="fs-5">Here you can look at your pictures...</h2>
+                        <h1 class="display-4 text-center">ABOUT SLIDESHOW APP</h1>
+                        <h2 class="fs-5">Here you can find detailed explanation how you can use our app...
+                        </h2>
                         <hr />
                     </div>
                 </div>
+                <div class="row mb-4 p-4">
+                    <div class="col-12 col-lg-6">
+                        <img class="img-fluid" src="./assets/images/signupScreenshot.png" alt="sign up form screenshot">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <h2 class="text-center m-4">Step 1 - Sign up</h2>
+                        <p>The first step is to enter your First Name and Last Name in the fields provided.</p>
+                        <p>Next, enter your Address in the provided fields. This can be either your home or work
+                            address.</p>
 
-                <p>about page content</p>
+                        <p>Enter your Email address in the next field. Make sure you use a valid and active email
+                            address.</p>
+                        <p>Provide your Phone Number which is also useful for account verification and communication
+                            purposes.</p>
+                        <p>Finally, create a Password for your account. The password should be strong and memorable, and
+                            should include a combination of numerical and alphabetical characters for security.</p>
+                        <p>After filling in all the fields, click on the "Submit" button to submit your details and
+                            complete the registration process</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row mb-4 p-4">
+                    <div class="col-12 col-lg-6">
+                        <h2 class="text-center m-4">Step 2 - Log in</h2>
+                        <p>Enter the email address in the "Email" field and the password in the "Password" field that
+                            you have registered with to log in and click on the "Submit" button in order to login.</p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <img class="img-fluid" src="./assets/images/loginScreenshot.png" alt="log in form screenshot">
+                    </div>
+                </div>
+                <hr />
+                <div class="row mb-4 p-4">
+                    <div class="col-12 col-lg-6">
+                        <img class="img-fluid" src="./assets/images/addPicNavScreenshot.png"
+                            alt="add pic navigation screenshot">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <h2 class="text-center m-4">Step 3 - Add Picture Navigation</h2>
+                        <p>Once you are logged in, you'll see in the navigation bar on the top-left
+                            side the "Add Pic" button. Now you can click on it to start adding pictures.</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row mb-4 p-4">
+                    <div class="col-12 col-lg-6">
+                        <h2 class="text-center m-4">Step 4 - Add Picture</h2>
+                        <p>In the Source field enter a URL where the picture is located.</p>
+                        <p>Next, in the Description field add a short description of the picture for you and other
+                            users.</p>
+                        <p>In the Credits field enter the picture's owner nickname or name.</p>
+                        <p>In the Price field enter the price of the picture.</p>
+                        <p>After filling all the fields, click on the "Submot" button.</p>
+                        <p>You can reset the fields by clicking on the "Cancel" button. </p><br>
+                        <p>After Submitting an image, you will be able to see it in the gallery/slideshow.</p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <img class="img-fluid" src="./assets/images/addPicFormScreenshot.png"
+                            alt="add picture form screenshot">
+                    </div>
+                </div>
+                <hr>
+                <div class="row p-4">
+                    <div class="col-12 col-lg-6">
+                        <img class="img-fluid" src="./assets/images/logoutScreenshot.png"
+                            alt="logout navigation screenshot">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <h2 class="text-center m-4">Step 5 - Logout</h2>
+                        <p>After you have finished uploading pictures, you can logout of your
+                            account by clicking on the "Logout" button in the navigation bar on the top-right corner.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -122,7 +205,7 @@
             <div class="container">
                 <div class="center" style="height: 87vh">
                     <form class="form p-2 col-12 col-md-6 col-xl-4 border rounded" style="min-width: 280px">
-                        <h1 class="text-center fs-5">CREATE NEW PICTURE</h1>
+                        <h1 class="text-center fs-5">ADD NEW PICTURE</h1>
                         <div>
                             <label for="create-pic-url">Source</label>
                             <input id="create-pic-url" type="text" class="form-control mb-2" name="url"
@@ -158,20 +241,21 @@
 
         <!-- signup page -->
         <div id="signup-page" class="d-none">
-            <div class="container" style=" height: 87vh">
+            <div class="container">
                 <h1 class="text-center display-4 p-3">SIGNUP PAGE</h1>
                 <div class="center">
                     <form class="form p-2 col-10 col-md-8 col-xl-6 border rounded" style="min-width: 480px">
                         <h5>Name</h5>
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label for="signup-first-name-field">First Name</label>
+                                <label for="signup-first-name-field">First Name <span class="text-danger">*</span>
+                                </label>
                                 <input id="signup-first-name-field" type="text" class="form-control mb-2" name="first"
                                     autocomplete="off" />
                                 <span id="signup-first-name-error" class="text-danger"></span>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label for="signup-last-name-field">Last Name</label>
+                                <label for="signup-last-name-field">Last Name <span class="text-danger">*</span></label>
                                 <input id="signup-last-name-field" type="text" class="form-control mb-2" name="last"
                                     autocomplete="off" />
                                 <span id="signup-last-name-error" class="text-danger"></span>
@@ -180,7 +264,7 @@
                         <h5>Address</h5>
                         <div class="row">
                             <div class="col-12 col-md-6 col-xl-4">
-                                <label for="signup-country-field">Country</label>
+                                <label for="signup-country-field">Country <span class="text-danger">*</span></label>
                                 <input id="signup-country-field" type="text" class="form-control mb-2" name="country"
                                     autocomplete="off" />
                                 <span id="signup-country-error" class="text-danger"></span>
@@ -192,25 +276,25 @@
                                 <span id="signup-state-error" class="text-danger"></span>
                             </div>
                             <div class="col-12 col-md-6 col-xl-4">
-                                <label for="signup-city-field">City</label>
+                                <label for="signup-city-field">City <span class="text-danger">*</span></label>
                                 <input id="signup-city-field" type="text" class="form-control mb-2" name="city"
                                     autocomplete="off" />
                                 <span id="signup-city-error" class="text-danger"></span>
                             </div>
                             <div class="col-12 col-md-6 col-xl-4">
-                                <label for="signup-street-field">Street</label>
+                                <label for="signup-street-field">Street <span class="text-danger">*</span></label>
                                 <input id="signup-street-field" type="text" class="form-control mb-2" name="street"
                                     autocomplete="off" />
                                 <span id="signup-street-error" class="text-danger"></span>
                             </div>
                             <div class="col-12 col-md-6 col-xl-4">
-                                <label for="signup-house-field">House Number</label>
+                                <label for="signup-house-field">House Number <span class="text-danger">*</span></label>
                                 <input id="signup-house-field" type="number" class="form-control mb-2" name="house"
                                     autocomplete="off" />
                                 <span id="signup-house-error" class="text-danger"></span>
                             </div>
                             <div class="col-12 col-md-6 col-xl-4">
-                                <label for="signup-zip-field">Zip </label>
+                                <label for="signup-zip-field">Zip <span class="text-danger">*</span></label>
                                 <input id="signup-zip-field" type="number" class="form-control mb-2" name="zip"
                                     autocomplete="off" />
                                 <span id="signup-zip-error" class="text-danger"></span>
@@ -219,13 +303,13 @@
                         <h5>Means of contact</h5>
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label for="signup-email-field">Email</label>
+                                <label for="signup-email-field">Email <span class="text-danger">*</span></label>
                                 <input id="signup-email-field" type="email" class="form-control mb-2" name="email"
                                     autocomplete="off" />
                                 <span id="signup-email-error" class="text-danger"></span>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label for="signup-phone-field">Phone Number</label>
+                                <label for="signup-phone-field">Phone Number <span class="text-danger">*</span></label>
                                 <input id="signup-phone-field" type="text" class="form-control mb-2" name="phone"
                                     autocomplete="off" />
                                 <span id="signup-phone-error" class="text-danger"></span>
@@ -234,13 +318,14 @@
                         <h5>Security</h5>
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <label for="signup-password-field">Password</label>
+                                <label for="signup-password-field">Password <span class="text-danger">*</span></label>
                                 <input id="signup-password-field" type="password" class="form-control mb-2"
                                     name="password" autocomplete="off" />
                                 <span id="signup-password-error" class="text-danger"></span>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label for="signup-password-reenter-field">Re-enter Password</label>
+                                <label for="signup-password-reenter-field">Re-enter Password <span
+                                        class="text-danger">*</span></label>
                                 <input id="signup-password-reenter-field" type="password" class="form-control mb-2"
                                     name="passwordReenter" autocomplete="off" />
                                 <span id="signup-password-reenter-error" class="text-danger"></span>
@@ -301,7 +386,7 @@
                 </div>
 
                 <p id="return-to-home-page-link" class="cursor">
-                    Click here to return to the hom page...
+                    Click here to return to the home page...
                 </p>
             </div>
         </div>
